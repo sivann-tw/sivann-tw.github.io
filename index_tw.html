@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!-- Basic -->
+		<meta charset="utf-8">
+		<title>IoT智慧閘道器解決方案 - 愛文西門科技 </title>		
+		<meta name="keywords" content="IoT Framework" />
+		<meta name="description" content="sivann provides a Nodejs-based IoT framework for inter-protocol IoT gateways.">
+		<meta name="author" content="愛文西門科技股份有限公司">
+		<meta property="og:url" content="http://www.sivann.com.tw/index.html" />        
+		<meta property="og:image" content="http://www.sivann.com.tw/img/sivann_logo.png" />
+		<meta property="og:title" content="sivann Inc. Open Source IoT Framework" />
+		<meta property="og:description" content="sivann - Pursuit of Simplicity" />
+
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Web Fonts  -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Arvo">
+		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="https://github.com/sivann-tw/sivann-tw.github.io/tree/master/vendor/bootstrap/bootstrap.css">
+		<link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.css">
+		<link rel="stylesheet" href="vendor/owlcarousel/owl.carousel.min.css" media="screen">
+		<link rel="stylesheet" href="vendor/owlcarousel/owl.theme.default.min.css" media="screen">
+		<link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.css" media="screen">
+
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="css/theme.css">
+		<link rel="stylesheet" href="css/theme-elements.css">
+		<link rel="stylesheet" href="css/theme-blog.css">
+		<link rel="stylesheet" href="css/theme-shop.css">
+		<link rel="stylesheet" href="css/theme-animate.css">
+
+		<!-- Current Page CSS -->
+		<link rel="stylesheet" href="vendor/rs-plugin/css/settings.css" media="screen">
+		<link rel="stylesheet" href="vendor/circle-flip-slideshow/css/component.css" media="screen">
+
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="css/skins/default.css">
+
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Head Libs -->
+		<script src="vendor/modernizr/modernizr.js"></script>
+
+        <!-- title icon -->
+		<link rel="shortcut icon" href="img/sivann_logo.ico"/>
+
+		<!-- website thumbnail image-->
+		<link rel="image_src" href="img/sivann_logo.png" /> 
+
+		<!--[if IE]>
+			<link rel="stylesheet" href="css/ie.css">
+		<![endif]-->
+
+		<!--[if lte IE 8]>
+			<script src="vendor/respond/respond.js"></script>
+			<script src="vendor/excanvas/excanvas.js"></script>
+		<![endif]-->
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-62964163-1', 'auto');
+		  ga('send', 'pageview');
+		
+		</script>
+	</head>
+	<body>
+		<div class="body" style="font-family: Microsoft JhengHei, '微軟正黑體';">
+			<header id="header">
+				<div class="container">
+					<div class="logo">
+						<a href="index.html" title="homepage">
+							<img alt="sivann" width="196.9" height="58" data-sticky-width="196.9" data-sticky-height="58" src="img/logo.png" style="top: 3px;">
+						</a>
+					</div>
+					<!-- not functional in HTML only version
+					<div class="search">
+						<form id="searchForm" action="page-search-results.html" method="get">
+							<div class="input-group">
+								<input type="text" class="form-control search" name="q" id="q" placeholder="Search..." required>
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+								</span>
+							</div>
+						</form>
+					</div>-->
+					<nav>
+						<ul class="nav nav-pills nav-top">
+							<li>
+                                <span><i class="fa fa-globe"></i><a href="index.html">English 英文</a></span>
+                            </li>
+                            <li>
+								<a href="about-us.html"><i class="fa fa-angle-right"></i>關於我們</a>
+							</li>
+							<li>
+								<a href="contact-us.html"><i class="fa fa-angle-right"></i>聯絡我們</a>
+							</li>
+							<li class="phone">
+								<span><i class="fa fa-envelope"></i><a href="mailto:support@sivann.com.tw">support@sivann.com.tw</a></span>
+							</li>
+						</ul>
+					</nav>
+					<button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse">
+						<i class="fa fa-bars"></i>
+					</button>
+				</div>
+				<div class="navbar-collapse nav-main-collapse collapse">
+					<div class="container">
+						<ul class="social-icons">
+							<li class="facebook"><a href="https://www.facebook.com/sivannInc" target="_blank" title="Facebook">Facebook</a></li>
+							<li class="twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter">Twitter</a></li>
+							<li class="linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin">Linkedin</a></li>
+						</ul>
+						<nav class="nav-main mega-menu">
+							<ul class="nav nav-pills nav-main" id="mainMenu">
+								<li>
+									<a href="index_tw.html">解決方案</a>
+								</li>
+								<li>
+									<a href="services_tw.html">服務項目</a>
+								</li>								
+								<li>
+									<a href="docs.html">技術文件</a>
+								</li>
+								<li class="dropdown">
+									<a class="dropdown-toggle" href="#">
+										關於我們
+										<i class="fa fa-angle-down"></i>
+									</a>
+									<ul class="dropdown-menu">
+										<li><a href="about-us.html">團隊簡介</a></li>
+										<li><a href="careers.html">工作機會</a></li>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<a class="dropdown-toggle" href="#">
+										聯絡我們
+										<i class="fa fa-angle-down"></i>
+									</a>
+									<ul class="dropdown-menu">
+										<li><a href="contact-us.html">公司位置</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</header>
+
+			<div role="main" class="main">
+				<div class="slider-container">
+					<div class="slider" id="revolutionSlider" data-plugin-revolution-slider data-plugin-options='{"startheight": 500}'>
+						<ul>
+							<li data-transition="fade" data-slotamount="14" data-masterspeed="300" >
+				
+								<img src="img/slides/slide-bg.jpg" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+				
+								<div class="tp-caption sft stb visible-lg"
+									 data-x="50"
+									 data-y="180"
+									 data-speed="300"
+									 data-start="1000"
+									 data-easing="easeOutExpo"><img src="img/slides/slide-title-border.png" alt=""></div>
+				
+								<div class="tp-caption top-label lfl stl"
+									 data-x="110"
+									 data-y="180"
+									 data-speed="300"
+									 data-start="500"
+									 data-easing="easeOutExpo">重新定義智慧閘道器、解決物聯網的相容性問題!</div>
+				
+								<div class="tp-caption sft stb visible-lg"
+									 data-x="700"
+									 data-y="180"
+									 data-speed="300"
+									 data-start="1000"
+									 data-easing="easeOutExpo"><img src="img/slides/slide-title-border.png" alt=""></div>
+				
+								<div class="tp-caption main-label sft stb"
+									 data-x="100"
+									 data-y="210"
+									 data-speed="300"
+									 data-start="1500"
+									 data-easing="easeOutExpo" style="font-size: 44px;">IoT智慧閘道器快速成型解決方案</div>
+								
+								<div class="tp-caption bottom-label sft stb"
+									 data-x="100"
+									 data-y="280"
+									 data-speed="500"
+									 data-start="1800"
+									 data-easing="easeOutExpo" style="font-size: 18px;">專門替物聯網的應用服務與智慧閘道器的開發而建立的軟體框架</div>
+
+								<div class="tp-caption bottom-label sft stb"
+									 data-x="260"
+									 data-y="310"
+									 data-speed="500"
+									 data-start="2100"
+                                      word-wrap: break-word;
+									 data-easing="easeOutExpo" style="font-size: 18px;">歡迎了解我們以下的特色與優勢</div>
+				
+								<div class="tp-caption randomrotate"
+									 data-x="955"
+									 data-y="350"
+									 data-speed="500"
+									 data-start="2500"
+									 data-easing="easeOutBack"><img src="img/slides/slide-concept-2-1.png" alt=""></div>
+				
+								<div class="tp-caption sfb"
+									 data-x="995"
+									 data-y="300"
+									 data-speed="250"
+									 data-start="3000"
+									 data-easing="easeOutBack"><img src="img/slides/slide-concept-2-2.png" alt=""></div>
+				
+								<div class="tp-caption sfb"
+									 data-x="975"
+									 data-y="270"
+									 data-speed="250"
+									 data-start="3150"
+									 data-easing="easeOutBack"><img src="img/slides/slide-concept-2-3.png" alt=""></div>
+				
+								<div class="tp-caption sfb"
+									 data-x="955"
+									 data-y="230"
+									 data-speed="250"
+									 data-start="3300"
+									 data-easing="easeOutBack"><img src="img/slides/slide-concept-2-4.png" alt=""></div>
+				
+								<div class="tp-caption sfb"
+									 data-x="775"
+									 data-y="60"
+									 data-speed="1000"
+									 data-start="3450"
+									 data-easing="easeOutExpo"><img src="img/slides/slide-concept-2-5.png" alt=""></div>
+				
+								<div class="tp-caption blackboard-text lfb "
+									 data-x="735"
+									 data-y="320"
+									 data-speed="500"
+									 data-start="3450"
+									 data-easing="easeOutExpo" style="font-size: 37px;">Think</div>
+				
+								<div class="tp-caption blackboard-text lfb "
+									 data-x="750"
+									 data-y="370"
+									 data-speed="500"
+									 data-start="3650"
+									 data-easing="easeOutExpo" style="font-size: 47px;">Outside</div>
+				
+								<div class="tp-caption blackboard-text lfb "
+									 data-x="765"
+									 data-y="420"
+									 data-speed="500"
+									 data-start="3850"
+									 data-easing="easeOutExpo" style="font-size: 32px;">The box :)</div>
+							</li>
+							<li data-transition="fade" data-slotamount="5" data-masterspeed="1000" >
+				
+								<img src="img/slides/slide-bg.jpg" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+				
+									<div class="tp-caption sft stb"
+										 data-x="125"
+										 data-y="100"
+										 data-speed="600"
+										 data-start="100"
+										 data-easing="easeOutExpo"><img src="img/slides/slide-concept.png" alt=""></div>
+				
+									<div class="tp-caption blackboard-text sft stb"
+										 data-x="255"
+										 data-y="180"
+										 data-speed="900"
+										 data-start="1000"
+										 data-easing="easeOutExpo" style="font-size: 32px;">易於</div>
+				
+									<div class="tp-caption blackboard-text sft stb"
+										 data-x="255"
+										 data-y="220"
+										 data-speed="900"
+										 data-start="1200"
+										 data-easing="easeOutExpo" style="font-size: 40px;">客製化!</div>
+				
+									<div class="tp-caption main-label sft stb"
+										 data-x="605"
+										 data-y="190"
+										 data-speed="300"
+										 data-start="900"
+										 data-easing="easeOutExpo">快速導入!</div>
+				
+									<div class="tp-caption bottom-label sft stb"
+                                         data-x="565"
+										 data-y="270"
+										 data-speed="500"
+										 data-start="2000"
+										 data-easing="easeOutExpo">快速又有系統的替物聯網創造你的手機應用與網頁應用程式</div>
+				
+							</li>
+							<li data-transition="fade" data-slotamount="5" data-masterspeed="1000" >
+				
+								<img src="img/slides/slide-bg.jpg" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+				
+									<div class="tp-caption sft stb"
+										 data-x="125"
+										 data-y="100"
+										 data-speed="600"
+										 data-start="100"
+										 data-easing="easeOutExpo"><img src="img/slides/slide-concept.png" alt=""></div>
+				
+									<div class="tp-caption blackboard-text sft stb"
+										 data-x="255"
+										 data-y="180"
+										 data-speed="900"
+										 data-start="1000"
+										 data-easing="easeOutExpo" style="font-size: 30px;">簡單的</div>
+				
+									<div class="tp-caption blackboard-text sft stb"
+										 data-x="255"
+										 data-y="220"
+										 data-speed="900"
+										 data-start="1200"
+										 data-easing="easeOutExpo" style="font-size: 40px;">開發方法!</div>
+				
+									<div class="tp-caption main-label sft stb"
+										 data-x="590"
+										 data-y="190"
+										 data-speed="300"
+										 data-start="900"
+										 data-easing="easeOutExpo">快速進入市場!</div>
+				
+									<div class="tp-caption bottom-label sft stb"
+										 data-x="585"
+										 data-y="270"
+										 data-speed="500"
+										 data-start="2000"
+										 data-easing="easeOutExpo">在簡單的框架之上建立你的專業應用與服務</div>
+				
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="home-intro" id="home-intro">
+					<div class="container">
+				
+						<div class="row">
+							<div class="col-md-12">
+								<p>
+									The fastest way to bring up your smart IoT service is with sivann's <em>IoT Framework</em>
+									<span>Check out our features and development kits included.</span>
+								</p>
+							</div>
+							<!--<div class="col-md-4">
+								<div class="get-started">
+									<a href="#" class="btn btn-lg btn-primary">Get Started Now!</a>
+									<div class="learn-more">or <a href="index.html">learn more.</a></div>
+								</div>
+							</div> -->
+						</div>
+				
+					</div>
+				</div>
+				
+				<div class="container" >
+				
+					<div class="row center">
+						<div class="col-md-12">
+							<h1 class="short word-rotator-title">
+								愛文西門科技的框架是
+								<strong class="inverted">
+									<span class="word-rotate" data-plugin-options='{"delay": 2000, "animDelay": 300}'>
+										<span class="word-rotate-items">
+											<span>開源式</span>
+                                            <span>具互通性</span>
+                                            <span>跨平台</span>
+											<span>人與裝置的橋樑</span>
+											<span>易於開發</span>
+										</span>
+									</span>
+								</strong>
+							</h1>
+							<p class="featured lead">
+								sivann provides the first IoT framework and design kit based on open-source hardware (OSHW) and open-source software (OSSW) principles. 
+							</p>
+						</div>
+					</div>
+				
+				</div>
+				
+				<div class="home-concept">
+					<div class="container">
+				
+						<div class="row center">
+							<span class="sun"></span>
+							<span class="cloud"></span>
+							<div class="col-md-2 col-md-offset-1">
+								<div class="process-image" data-appear-animation="bounceIn">
+									<a href="http://opensource.org/" title="OSS">
+                                        <img src="img/home-concept-item-oss.png" alt=""  />
+                                    </a>
+									<strong style="font-family: Microsoft JhengHei, '微軟正黑體';">開源式軟體</strong>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="process-image" data-appear-animation="bounceIn" data-appear-animation-delay="200">
+									<a href="http://www.oshwa.org/" title="OSHW">
+                                    <img src="img/home-concept-item-osh.png" alt="" />
+                                    </a>									
+                                    <strong style="font-family: Microsoft JhengHei, '微軟正黑體';">開源式硬體</strong>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="process-image" data-appear-animation="bounceIn" data-appear-animation-delay="400">
+									<a href="https://nodejs.org/" title="Node.js">
+                                    <img src="img/home-concept-item-js.png" alt="" />
+									</a>
+                                    <strong>Javascript</strong>
+								</div>
+							</div>
+							<div class="col-md-4 col-md-offset-1">
+								<div class="project-image">
+									<div id="fcSlideshow" class="fc-slideshow">
+										<ul class="fc-slides">
+											<li><a href="services.html" titile="our services"><img class="img-responsive" src="img/projects/sivann_IoT_framework.png" alt="" /></a></li>
+											<li><a href="services.html" titile="our services"><img class="img-responsive" src="img/projects/sivann_IoT_framework_0.png" alt="" /></a></li>
+											<li><a href="services.html" titile="our services"><img class="img-responsive" src="img/projects/sivann_IoT_framework_1.png" /></a></li>
+											<li><a href="services.html" titile="our services"><img class="img-responsive" src="img/projects/sivann_IoT_framework_2.png" /></a></li> 
+										</ul>
+									</div>
+									<strong class="our-work" style="font-family: Microsoft JhengHei, '微軟正黑體';">我們的物聯網框架</strong>
+								</div>
+							</div>
+						</div>
+				
+					</div>
+				</div>
+				
+				<div class="container">
+				
+					<div class="row">
+						<hr class="tall" />
+					</div>
+				
+				</div>
+				
+				<div class="container">
+				
+					<div class="row">
+						<div class="col-md-12">
+							<h2>我們的 <strong>特色</strong></h2>
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="feature-box">
+										<div class="feature-box-icon">
+											<i class="fa fa-wifi"></i>
+										</div>
+										<div class="feature-box-info">
+											<h4 class="shorter">讓不同通訊協定具互通性</h4>
+											<p class="tall">互通性。愛文西門科技正在解決物聯網領域中最大的挑戰，也就是物聯網通訊標準破碎化的問題。在我們的框架之下，使用不同通訊協定的智慧物聯裝置能互相溝通。愛文西門讓開發者能有更簡單、更有系統性的開發方式來開發物聯網的應用，讓不同通訊協定的智慧裝置能彼此互動，而網路層與控制層的煩惱就交給我們的框架來處理。</p>
+										</div>
+									</div>                                
+									<div class="feature-box">
+										<div class="feature-box-icon">
+											<i class="fa fa-file"></i>
+										</div>
+										<div class="feature-box-info">
+											<h4 class="shorter">跨平台</h4>
+											<p class="tall">降低置換成本，減少開發費用。前端開發者現在能在我們基於Node.js的框架上夠更快的開發物聯網伺服器端的應用。我們框架整合了複雜的有線或無線網路層通訊通訊協定、底層的晶片控制層、裝置管理層、及韌體等等。讓開發者可以更專注於開發殺手級的應用。</p>
+										</div>
+									</div>
+									<div class="feature-box">
+										<div class="feature-box-icon">
+											<i class="fa fa-share-alt"></i>
+										</div>
+										<div class="feature-box-info">
+											<h4 class="shorter">開源式</h4>
+											<p class="tall">掌握程式碼的控制權。開法者能夠利用免費的開源式軟體隨心所欲的開發應用程式，而不用擔心被某一種封閉式的私有平台綁住。原始碼、API文件及應用文件都可以直接於開源式社群網路上下載。</p>
+										</div>
+									</div>                                    
+									<!--<div class="feature-box">
+										<div class="feature-box-icon">
+											<i class="fa fa-google-plus"></i>
+										</div>
+										<div class="feature-box-info">
+											<h4 class="shorter">500+ Google Fonts</h4>
+											<p class="tall">Lorem ipsum dolor sit amet, consectetur adip.</p>
+										</div>
+									</div>-->
+								</div>
+								<div class="col-sm-6">
+									<div class="feature-box">
+										<div class="feature-box-icon">
+											<i class="fa fa-server"></i>
+										</div>
+										<div class="feature-box-info">
+											<h4 class="shorter">人與裝置的橋樑</h4>
+											<p class="tall">Flexible & Scalable. Friendly APIs are provided to developers to quickly develop APP/Webs applications that can communicate between their smart wireless devices and host server with inter-connecting & management services embedded in the framework. Developers can also build up host APPs and the IoT server without reinventing the wheel.</p>
+										</div>
+									</div>
+									<div class="feature-box">
+										<div class="feature-box-icon">
+											<i class="fa fa-key"></i>
+										</div>
+										<div class="feature-box-info">
+											<h4 class="shorter">解決方案</h4>
+											<p class="tall">Fast Ramp-up. We offer not only software framework, but open source hardware reference designs for various sensor circuits and Linux-based gateway for your reference. </p>
+										</div>
+									</div>
+									<div class="feature-box">
+										<div class="feature-box-icon">
+											<i class="fa fa-file-text"></i>
+										</div>
+										<div class="feature-box-info">
+											<h4 class="shorter">韌體支援</h4>
+											<p class="tall">Optimization. More reporting functions and energy-saving approaches will be enabled through our firmware support.</p>
+										</div>
+									</div>
+									<!--<div class="feature-box">
+										<div class="feature-box-icon">
+											<i class="fa fa-bicycle"></i>
+										</div>
+										<div class="feature-box-info">
+											<h4 class="shorter">Lightweight</h4>
+											<p class="tall">Efficient. </p>
+										</div>
+									</div>-->
+								</div>
+							</div>
+						</div>
+						<!--<div class="col-md-4">
+							<h2>and more...</h2>
+				
+							<div class="panel-group" id="accordion">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+												<i class="fa fa-usd"></i>
+												Pricing Tables
+											</a>
+										</h4>
+									</div>
+									<div id="collapseOne" class="accordion-body collapse in">
+										<div class="panel-body">
+											Donec tellus massa, tristique sit amet condim vel, facilisis quis sapien. Praesent id enim sit amet odio vulputate eleifend in in tortor.
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+												<i class="fa fa-comment"></i>
+												Contact Forms
+											</a>
+										</h4>
+									</div>
+									<div id="collapseTwo" class="accordion-body collapse">
+										<div class="panel-body">
+											Donec tellus massa, tristique sit amet condimentum vel, facilisis quis sapien.
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+												<i class="fa fa-laptop"></i>
+												Portfolio Pages
+											</a>
+										</h4>
+									</div>
+									<div id="collapseThree" class="accordion-body collapse">
+										<div class="panel-body">
+											Donec tellus massa, tristique sit amet condimentum vel, facilisis quis sapien.
+										</div>
+									</div>
+								</div>
+							</div>
+						</div> -->
+					</div>
+				
+					<hr class="tall" />
+				<!--
+					<div class="row center">
+						<div class="col-md-12">
+							<h2 class="short word-rotator-title">
+								We're not the only ones
+								<strong>
+									<span class="word-rotate" data-plugin-options='{"delay": 3500, "animDelay": 400}'>
+										<span class="word-rotate-items">
+											<span>excited</span>
+											<span>happy</span>
+										</span>
+									</span>
+								</strong>
+								about Porto Template...
+							</h2>
+							<h4 class="lead tall">5,500 customers in 100 countries use Porto Template. Meet our customers.</h4>
+						</div>
+					</div>
+					<div class="row center">
+						<div class="owl-carousel" data-plugin-options='{"items": 6, "autoplay": true, "autoplayTimeout": 3000}'>
+							<div>
+								<img class="img-responsive" src="img/logos/logo-1.png" alt="">
+							</div>
+							<div>
+								<img class="img-responsive" src="img/logos/logo-2.png" alt="">
+							</div>
+							<div>
+								<img class="img-responsive" src="img/logos/logo-3.png" alt="">
+							</div>
+							<div>
+								<img class="img-responsive" src="img/logos/logo-4.png" alt="">
+							</div>
+							<div>
+								<img class="img-responsive" src="img/logos/logo-5.png" alt="">
+							</div>
+							<div>
+								<img class="img-responsive" src="img/logos/logo-6.png" alt="">
+							</div>
+							<div>
+								<img class="img-responsive" src="img/logos/logo-4.png" alt="">
+							</div>
+							<div>
+								<img class="img-responsive" src="img/logos/logo-2.png" alt="">
+							</div>
+						</div>
+					</div>
+				-->
+				</div>
+				<!--
+				<div class="map-section">
+					<section class="featured footer map">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="recent-posts push-bottom">
+										<h2>Latest <strong>Blog</strong> Posts</h2>
+										<div class="row">
+											<div class="owl-carousel" data-plugin-options='{"items": 1}'>
+												<div>
+													<div class="col-md-6">
+														<article>
+															<div class="date">
+																<span class="day">15</span>
+																<span class="month">Jan</span>
+															</div>
+															<h4><a href="blog-post.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h4>
+															<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat libero. <a href="/" class="read-more">read more <i class="fa fa-angle-right"></i></a></p>
+														</article>
+													</div>
+													<div class="col-md-6">
+														<article>
+															<div class="date">
+																<span class="day">15</span>
+																<span class="month">Jan</span>
+															</div>
+															<h4><a href="blog-post.html">Lorem ipsum dolor</a></h4>
+															<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat. <a href="/" class="read-more">read more <i class="fa fa-angle-right"></i></a></p>
+														</article>
+													</div>
+												</div>
+												<div>
+													<div class="col-md-6">
+														<article>
+															<div class="date">
+																<span class="day">12</span>
+																<span class="month">Jan</span>
+															</div>
+															<h4><a href="blog-post.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h4>
+															<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat libero. <a href="/" class="read-more">read more <i class="fa fa-angle-right"></i></a></p>
+														</article>
+													</div>
+													<div class="col-md-6">
+														<article>
+															<div class="date">
+																<span class="day">11</span>
+																<span class="month">Jan</span>
+															</div>
+															<h4><a href="blog-post.html">Lorem ipsum dolor</a></h4>
+															<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="/" class="read-more">read more <i class="fa fa-angle-right"></i></a></p>
+														</article>
+													</div>
+												</div>
+												<div>
+													<div class="col-md-6">
+														<article>
+															<div class="date">
+																<span class="day">15</span>
+																<span class="month">Jan</span>
+															</div>
+															<h4><a href="blog-post.html">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></h4>
+															<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat libero. <a href="/" class="read-more">read more <i class="fa fa-angle-right"></i></a></p>
+														</article>
+													</div>
+													<div class="col-md-6">
+														<article>
+															<div class="date">
+																<span class="day">15</span>
+																<span class="month">Jan</span>
+															</div>
+															<h4><a href="blog-post.html">Lorem ipsum dolor</a></h4>
+															<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat. <a href="/" class="read-more">read more <i class="fa fa-angle-right"></i></a></p>
+														</article>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<h2><strong>What</strong> Client’s Say</h2>
+									<div class="row">
+										<div class="owl-carousel push-bottom" data-plugin-options='{"items": 1}'>
+											<div>
+												<div class="col-md-12">
+													<blockquote class="testimonial">
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat.  Donec hendrerit vehicula est, in consequat.  Donec hendrerit vehicula est, in consequat.</p>
+													</blockquote>
+													<div class="testimonial-arrow-down"></div>
+													<div class="testimonial-author">
+														<div class="img-thumbnail img-thumbnail-small">
+															<img src="img/clients/client-1.jpg" alt="">
+														</div>
+														<p><strong>John Smith</strong><span>CEO & Founder - Okler</span></p>
+													</div>
+												</div>
+											</div>
+											<div>
+												<div class="col-md-12">
+													<blockquote class="testimonial">
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est, in consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+													</blockquote>
+													<div class="testimonial-arrow-down"></div>
+													<div class="testimonial-author">
+														<div class="img-thumbnail img-thumbnail-small">
+															<img src="img/clients/client-1.jpg" alt="">
+														</div>
+														<p><strong>John Smith</strong><span>CEO & Founder - Okler</span></p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div> -->
+			</div>
+ 
+			<footer id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="footer-ribbon">
+							<span>Get in Touch</span>
+						</div>
+						<div class="col-md-3">
+							<div class="newsletter">
+								<h4>Latest Blogs</h4>
+								<p>Coming soon...</p>
+							</div>
+						</div>
+						<!--<div class="col-md-3">
+							<h4>Latest Tweets</h4>
+							<div id="tweet" class="twitter" data-plugin-tweets data-plugin-options='{"username": "", "count": 2}'>
+								<p>Coming soon...</p>
+							</div>
+						</div>-->
+						<div class="col-md-4">
+							<div class="contact-details">
+								<h4>Contact Us</h4>
+								<ul class="contact">
+									<li><i class="fa fa-map-marker"></i> <strong>Address:</strong> 
+										<ul>5F-17, No.26, Ln.321, Yangguang St., Taipei City 114, Taiwan (R.O.C.)</ul>
+										<ul>台北市內湖區陽光街321巷26號5樓之17</ul>
+									</li>
+									<li><p><i class="fa fa-phone"></i> <strong>Phone:</strong> +886-2-2658-3302</p></li>
+									<li><p><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:support@sivann.com.tw">support@sivann.com.tw</a></p></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<h4>Follow Us</h4>
+							<div class="social-icons">
+								<ul class="social-icons">
+									<li class="facebook"><a href="https://www.facebook.com/sivannInc" target="_blank" data-placement="bottom" data-tooltip title="Facebook">Facebook</a></li>
+									<li class="twitter"><a href="http://www.twitter.com/" target="_blank" data-placement="bottom" data-tooltip title="Twitter">Twitter</a></li>
+									<!--<li class="linkedin"><a href="http://www.linkedin.com/" target="_blank" data-placement="bottom" data-tooltip title="Linkedin">Linkedin</a></li>-->
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer-copyright">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-3">
+								<p>愛文西門科技股份有限公司</p>
+							</div>
+							<div class="col-md-3">
+								<p>© Copyright 2015. All Rights Reserved.</p>
+							</div>
+                            <div class="col-md-3">
+                                <span><i class="fa fa-globe"></i><a href="index.html"> English 英文 </a></span>
+                            </div>                           
+							<div class="col-md-3">
+								<nav id="sub-menu">
+									<ul>
+										<li><a href="page-faq.html">FAQ's</a></li>
+										<li><a href="contact-us.html">Contact</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<!-- Vendor -->
+		<script src="vendor/jquery/jquery.js"></script>
+		<script src="vendor/jquery.appear/jquery.appear.js"></script>
+		<script src="vendor/jquery.easing/jquery.easing.js"></script>
+		<script src="vendor/jquery-cookie/jquery-cookie.js"></script>
+		<script src="vendor/bootstrap/bootstrap.js"></script>
+		<script src="vendor/common/common.js"></script>
+		<script src="vendor/jquery.validation/jquery.validation.js"></script>
+		<script src="vendor/jquery.stellar/jquery.stellar.js"></script>
+		<script src="vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.js"></script>
+		<script src="vendor/jquery.gmap/jquery.gmap.js"></script>
+		<script src="vendor/isotope/jquery.isotope.js"></script>
+		<script src="vendor/owlcarousel/owl.carousel.js"></script>
+		<script src="vendor/jflickrfeed/jflickrfeed.js"></script>
+		<script src="vendor/magnific-popup/jquery.magnific-popup.js"></script>
+		<script src="vendor/vide/vide.js"></script>
+		
+		<!-- Theme Base, Components and Settings -->
+		<script src="js/theme.js"></script>
+		
+		<!-- Specific Page Vendor and Views -->
+		<script src="vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+		<script src="vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+		<script src="vendor/circle-flip-slideshow/js/jquery.flipshow.js"></script>
+		<script src="js/views/view.home.js"></script>
+		
+		<!-- Theme Custom -->
+		<script src="js/custom.js"></script>
+		
+		<!-- Theme Initialization Files -->
+		<script src="js/theme.init.js"></script>
+
+		<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information.
+		<script type="text/javascript">
+		
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-12345678-1']);
+			_gaq.push(['_trackPageview']);
+		
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		
+		</script>
+		 -->
+
+	</body>
+</html>
