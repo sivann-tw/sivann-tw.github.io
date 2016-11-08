@@ -1005,8 +1005,8 @@
 		}
 
 		// Catch transitionEnd event
-		if (this.transitionEndVendor) {
-			this.on(this.dom.stage, this.transitionEndVendor, this.e._transitionEnd, false);
+		if (this.transitionEndvendor) {
+			this.on(this.dom.stage, this.transitionEndvendor, this.e._transitionEnd, false);
 		}
 
 		// Responsive
@@ -1740,8 +1740,8 @@
 			this.off(window, 'resize', this.e._resizer);
 		}
 
-		if (this.transitionEndVendor) {
-			this.off(this.dom.stage, this.transitionEndVendor, this.e._transitionEnd);
+		if (this.transitionEndvendor) {
+			this.off(this.dom.stage, this.transitionEndvendor, this.e._transitionEnd);
 		}
 
 		for ( var i in this.plugins) {
@@ -1899,14 +1899,14 @@
 		this.support3d = isPerspective();
 
 		if (this.support3d) {
-			this.transformVendor = isTransform();
+			this.transformvendor = isTransform();
 
 			// take transitionend event name by detecting transition
-			var endVendors = [ 'transitionend', 'webkitTransitionEnd', 'transitionend', 'oTransitionEnd' ];
-			this.transitionEndVendor = endVendors[isTransition()];
+			var endvendors = [ 'transitionend', 'webkitTransitionEnd', 'transitionend', 'oTransitionEnd' ];
+			this.transitionEndvendor = endvendors[isTransition()];
 
 			// take vendor name from transform name
-			this.vendorName = this.transformVendor.replace(/Transform/i, '');
+			this.vendorName = this.transformvendor.replace(/Transform/i, '');
 			this.vendorName = this.vendorName !== '' ? '-' + this.vendorName.toLowerCase() + '-' : '';
 		}
 
