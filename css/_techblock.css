@@ -1,0 +1,33 @@
+/* Combined Module */
+.techblock {
+    box-shadow: 0 0 2px rgba(0, 1, 2, 0);
+    position: relative;
+}
+
+.techblock-content {
+    padding: 5px;
+}
+
+.techblock .title {
+    padding: 15px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    width: 100%;
+    background-color: #9CAAB5;
+}
+
+.techblock .title + p {
+    margin-top: 15px;
+}
+
+.techblock > a {
+    color: #fff;
+}
+
+
+@media (max-width: 992px) {
+    .techblock-content {
+        margin-bottom: 25px;
+    }
+}
+

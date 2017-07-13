@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", Arial, "微軟正黑體 Light", PMingLiU, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #F8FBF8;
+    color: #595857;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #4EA1D3
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}

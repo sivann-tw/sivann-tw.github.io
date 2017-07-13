@@ -1,0 +1,14 @@
+.form-iten {
+    margin-bottom: 15px;
+}
+
+.form-item label {
+    margin-bottom: 15px;
+    display: block;
+}
+
+.form-element {
+    width: 100%;
+    border: 1px solid #151515;
+    padding: 4px 10px;
+}

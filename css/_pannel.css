@@ -1,0 +1,48 @@
+/* Combined Module */
+.pannel {
+    box-shadow: 0 0 2px rgba(0, 1, 2, 0);
+    position: relative;
+    padding: 0px 15px;
+    margin-bottom: 20px;
+}
+
+.pannel-number {
+    position: relative;
+    color: #F8FBF8;
+    border: 1px solid #F8FBF8;
+    width: 68px;
+    height: 68px;
+}
+
+.pannel-number-text {
+    position: absolute;
+    color: #F8FBF8;
+    right: 5px;
+    bottom: 0;
+    font-size: 1.6rem;
+}
+
+.pannel-title {
+    color: #F8FBF8;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.pannel-sub-title {
+    color: #E5D6A6;
+    margin-top: 0;
+    font-size: 0.8rem;
+}
+
+.pannel-p {
+    margin-top: 0;
+}
+
+
+
+@media (max-width: 1200px) {
+    .pannel-vert {
+        display: none;
+    }
+}
