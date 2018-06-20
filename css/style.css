@@ -997,3 +997,29 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 15px;
     margin-bottom: -40px;
 }
+
+.introduction {
+    margin: 5% 0;
+    height: auto;
+}
+
+ul,li {
+    padding:0; 
+    margin:0;
+}
+
+.button-long {
+    width: 100%;
+    margin: 5px 0;
+    color: #F8FBF8;
+    border-radius: 5px;
+    box-shadow: 3px 3px #DCDCDC;
+}
+
+.list-item {
+    margin-bottom:0px;
+    color: #ABABAB;
+}
+
+hr {
+}
