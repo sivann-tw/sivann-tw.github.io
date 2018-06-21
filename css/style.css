@@ -1014,6 +1014,7 @@ ul,li {
     color: #F8FBF8;
     border-radius: 5px;
     box-shadow: 3px 3px #DCDCDC;
+    text-align: center;
 }
 
 .list-item {
