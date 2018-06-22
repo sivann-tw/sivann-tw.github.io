@@ -684,7 +684,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     margin-bottom: 5px;
     width: 100%;
-    background-color: #9CAAB5;
+    background-color: rgba(123, 124, 125, 0.6);
 }
 
 .techblock .title + p {
@@ -907,7 +907,7 @@ h1, h2, h3, h4, h5, h6 {
 .section-service,
 .section-tech {
     height: auto;
-    background-color: rgba(77, 102, 124, 0.6);
+    background-color: rgba(94, 94, 94, 0.6);
     color: #F8FBF8;
 }
 
