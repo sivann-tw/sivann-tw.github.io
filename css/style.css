@@ -1022,5 +1022,8 @@ ul,li {
     color: #ABABAB;
 }
 
-hr {
+.text-component {
+    color:#B39D64; 
+    text-align: center; 
+    font-size: 12px;
 }
