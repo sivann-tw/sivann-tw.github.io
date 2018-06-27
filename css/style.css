@@ -1038,3 +1038,22 @@ ul,li {
 .title-en {
     font-weight: 700;
 }
+
+.border-bottom {
+    border-bottom: 1px #91989F solid; 
+    padding-bottom: 5px; 
+    margin-bottom: 10px
+}
+
+.container-banner {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+@media (min-width: 1200px) {
+    .container-banner {
+        width: 1100px
+    }
+}
+
