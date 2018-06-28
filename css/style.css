@@ -1029,6 +1029,11 @@ ul,li {
     color: #ABABAB;
 }
 
+.list-price {
+    margin-bottom:0px;
+    color: #D2644E;
+}
+
 .text-component {
     color:#B39D64; 
     text-align: center; 
@@ -1057,3 +1062,18 @@ ul,li {
     }
 }
 
+@media (min-width: 544px) {
+    .visible-sm {
+        display:none;
+    }
+}
+
+@media (max-width: 544px) {
+    .visible-sm {
+        display:inline;
+    }
+
+    .hidden-sm {
+        display:none
+    }
+}
