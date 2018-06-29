@@ -33,6 +33,11 @@ a:hover {
     height: auto;
 }
 
+.img-fluid-wide {
+    max-width: 3129px;
+    height: auto;
+}
+
 /*@import url(_layout.css);*/
 /* Container */
 
@@ -1062,6 +1067,12 @@ ul,li {
     }
 }
 
+@media (min-width: 3129px) {
+    .container-banner {
+        width: 3129px
+    }
+}
+
 @media (min-width: 544px) {
     .visible-sm {
         display:none;
@@ -1074,6 +1085,24 @@ ul,li {
     }
 
     .hidden-sm {
+        display:none
+    }
+}
+
+
+
+@media (min-width: 1922px) {
+    .visible-xl {
+        display:none;
+    }
+}
+
+@media (max-width: 1922px) {
+    .visible-xl {
+        display:inline;
+    }
+
+    .hidden-xl {
         display:none
     }
 }
