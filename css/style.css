@@ -1061,12 +1061,6 @@ ul,li {
     position: relative;
 }
 
-@media (min-width: 1922px) {
-    .container-banner {
-        width: 1922px
-    }
-}
-
 @media (min-width: 3129px) {
     .container-banner {
         width: 3129px
